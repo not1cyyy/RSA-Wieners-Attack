@@ -14,11 +14,12 @@ if d == None:
 	os._exit(1)
 else:
 	choice = input("Do you want to decrypt a ciphertext ? y/n : ")
+	
 match choice:
 	case "y":
 		c = int(input("Enter the ciphertext c: "))
-		m = pow(c, d, n)
-		plain = bytearray.fromhex(hex(m)[2:]).decode()
+		#m = pow(c, d, n)
+		plain = bytearray.fromhex(hex(pow(c, d, n))[2:]).decode()
 		sleep(1)
 		print(f'Here is the plain text: {plain}')
 		sleep(1)
